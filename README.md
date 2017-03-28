@@ -315,3 +315,66 @@ plotter$plotGraph(allPoints, 'plots/bank_analysis.png')
 ```
 
 ![Imgur](http://i.imgur.com/UJsrm9K.png)
+
+# Trabalho 1.2 Diagrama de Voronoi - Entrega
+
++ Distância de Hamming+
++ Distância Euclidiana
++ Algoritmo NN (Nearest Neighbour)
++ Algoritmo kNN (k+Nearest Neighbours)
++ Implementar o Diagrama de Voronoi
++ Envie um pequeno relatório explicando como executar seu programa.
+
+
+## Instruções de execução
+
+**Para executar o programa vá para pasta raiz e carregue o seguinte código para o terminal**
+
+```r
+# File to plot the datasets
+source('dependencies.R')
+
+voronoiPlotter = voronoiPlotter$new()
+
+spiral  = Spiral$new(700, 0.1, FALSE, 'spiral_one')
+spiralPoints = spiral$points();
+x = as.numeric(spiralPoints[,1])
+y = as.numeric(spiralPoints[,2])
+voronoiPlotter$plotGraph(x, y, 'plots/voronoi/spiral.png')
+
+doubleSpiral = doubleSpiral$new()
+doubleSpiralPoints = doubleSpiral$points()
+x = as.numeric(doubleSpiralPoints[,1])
+y = as.numeric(doubleSpiralPoints[,2])
+voronoiPlotter$plotGraph(x, y, 'plots/voronoi/double_spiral.png')
+
+bank = bankTwoDimensionsDataset$new('dataset/bank.xlsx')
+bankPoints = bank$points();
+x = as.numeric(bankPoints[,1])
+y = as.numeric(bankPoints[,2]) / 1200
+voronoiPlotter$plotGraph(x, y, 'plots/voronoi/bank.png')
+
+cars = carsDataset$new('dataset/cars.xlsx')
+carsPoint = cars$points();
+x = as.numeric(carsPoint[,1])
+y = as.numeric(carsPoint[,2])
+voronoiPlotter$plotGraph(x, y, 'plots/voronoi/cars.png')
+```
+
+Ao final da execução será gerado os seguintes gráficos:
+
+**Dataset da espiral**
+
+![Imgur](http://i.imgur.com/Qdh08iK.png)
+
+**Dataset da espiral dupla**
+
+![Imgur](http://i.imgur.com/yiL0mSe.png)
+
+**Dataset do banco**
+
+![Imgur](http://i.imgur.com/BxI0EVN.png)
+
+**Dataset dos carros**
+
+![Imgur](http://i.imgur.com/pQstmA1.png)

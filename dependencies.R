@@ -20,8 +20,9 @@ source('distance_calculators/distance_calculator.R')
 source('distance_calculators/hamming_distance_calculator.R')
 source('distance_calculators/euclidean_distance_calculator.R')
 
-# Load plotter
+# Load plotters
 source('plotter.R')
+source('voronoi_plotter.R')
 
 # Sample executor
 source('samples/sample_executor.R')
