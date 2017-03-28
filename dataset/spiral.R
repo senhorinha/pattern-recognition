@@ -1,6 +1,6 @@
 spiral = setRefClass("spiral",
     fields = list(length = 'numeric', growthSpeed = 'numeric', inverseGrowth = 'logical', identifier = 'character'),
-    
+
     methods = list(
        initialize = function(length, growthSpeed, inverseGrowth = FALSE, identifier = paste(c('id', sample(1:100, 1)), collapse = " ")) {
         .self$length = length
@@ -8,10 +8,10 @@ spiral = setRefClass("spiral",
         .self$inverseGrowth = inverseGrowth
         .self$identifier = identifier
        },
-      
-      buildPoints = function() {
+
+      points = function() {
         spiralPoints = matrix(0, length, 2)
-        
+
         for (index in 1:length) {
             angle = growthSpeed * index;
             x = (1 + angle) * cos(angle);
@@ -21,13 +21,13 @@ spiral = setRefClass("spiral",
         if (inverseGrowth) {
             spiralPoints = spiralPoints * -1
         }
-        
+
         cbind(spiralPoints, matrix(identifier, length, 1))
       },
-      
+
       plotGraph = function(path = "spiral.png") {
         png(path)
-        plot(.self$buildPoints())
+        plot(.self$points())
         dev.off()
       }
     )

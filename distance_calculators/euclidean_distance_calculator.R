@@ -2,7 +2,7 @@ euclideanDistanceCalculator <- setRefClass("euclideanDistanceCalculator",
     contains = "distanceCalculator",
     methods = list(
         calculate = function(dimensionsOne, dimensionsTwo) {
-            sqrt(sum((dimensionsOne - dimensionsTwo) ^ 2))
+            sqrt(sum((as.numeric(dimensionsOne) - as.numeric(dimensionsTwo)) ^ 2))
         }
     )
 )
