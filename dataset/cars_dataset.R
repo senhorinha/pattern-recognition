@@ -1,6 +1,5 @@
-library("readxl")
-
 carsDataset = setRefClass("carsDataset",
+    contains = "Dataset",
     fields = list(carsXlsxPath = 'character'),
     methods = list(
       initialize = function(carsXlsxPath) {

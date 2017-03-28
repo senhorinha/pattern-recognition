@@ -1,5 +1,3 @@
-library('hashmap')
-
 kNearestNeighbourClassifier = setRefClass("kNearestNeighbourClassifier",
     contains = "classifier",
     methods = list(

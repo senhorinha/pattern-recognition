@@ -1,9 +1,8 @@
-library("readxl")
-
 # Duration of Credit  month and Credit Amount dimensions
 
 bankTwoDimensionsDataset = setRefClass("bankTwoDimensionsDataset",
     fields = list(bankXlsxPath = 'character'),
+    contains = "Dataset",
     methods = list(
       initialize = function(bankXlsxPath) {
        .self$bankXlsxPath = bankXlsxPath
